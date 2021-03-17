@@ -177,15 +177,6 @@ import UIKit
         // Headers
         insertComplementaryViews(makeHeaderViews)
         
-        // Title
-        let isNextToCloseButton = isDismissable && requiresCloseButton
-        let titleView = interfaceBuilder.makeTitleLabel(isNextToCloseButton: isNextToCloseButton)
-        titleView.label.text = title
-        
-        self.titleLabel = titleView
-        contentViews.append(titleView)
-        insertComplementaryViews(makeViewsUnderTitle)
-        
         // Image View
         if let image = self.image {
             let imageView = UIImageView(image: image)
@@ -203,6 +194,15 @@ import UIKit
             contentViews.append(imageView)
             insertComplementaryViews(makeViewsUnderImage)
         }
+        
+        // Title
+        let isNextToCloseButton = isDismissable && requiresCloseButton
+        let titleView = interfaceBuilder.makeTitleLabel(isNextToCloseButton: isNextToCloseButton)
+        titleView.label.text = title
+        
+        self.titleLabel = titleView
+        contentViews.append(titleView)
+        insertComplementaryViews(makeViewsUnderTitle)
         
         // Description Label
         if let attributedDescription = attributedDescriptionText {

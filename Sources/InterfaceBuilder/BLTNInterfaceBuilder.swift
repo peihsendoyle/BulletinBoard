@@ -213,7 +213,6 @@ import UIKit
                 child.topAnchor.constraint(equalTo: parent.topAnchor).isActive = true
                 child.bottomAnchor.constraint(equalTo: parent.bottomAnchor).isActive = true
             }
-
         }
 
         return container

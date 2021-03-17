@@ -87,13 +87,13 @@ import UIKit
     // MARK: - Font Customization
 
     /// An optional custom font to use for the title label. Set this to nil to use the system font.
-    @objc public var titleFontDescriptor: UIFontDescriptor?
+    @objc public var titleFont: UIFont?
 
     /// An optional custom font to use for the description label. Set this to nil to use the system font.
-    @objc public var descriptionFontDescriptor: UIFontDescriptor?
+    @objc public var descriptionFont: UIFont?
 
     /// An optional custom font to use for the buttons. Set this to nil to use the system font.
-    @objc public var buttonFontDescriptor: UIFontDescriptor?
+    @objc public var buttonFont: UIFont?
 
     /**
      * Whether the description text should be displayed with a smaller font.
@@ -133,8 +133,8 @@ extension BLTNItemAppearance {
 
     @objc public func makeTitleFont() -> UIFont {
 
-        if let titleFontDescriptor = self.titleFontDescriptor {
-            return UIFont(descriptor: titleFontDescriptor, size: titleFontSize)
+        if let titleFont = self.titleFont {
+            return titleFont
         } else {
             return UIFont.systemFont(ofSize: titleFontSize, weight: .medium)
         }
@@ -149,8 +149,8 @@ extension BLTNItemAppearance {
 
         let size = shouldUseCompactDescriptionText ? compactDescriptionFontSize : descriptionFontSize
 
-        if let descriptionFontDescriptor = self.descriptionFontDescriptor {
-            return UIFont(descriptor: descriptionFontDescriptor, size: size)
+        if let descriptionFont = self.descriptionFont {
+            return descriptionFont
         } else {
             return UIFont.systemFont(ofSize: size)
         }
@@ -163,8 +163,8 @@ extension BLTNItemAppearance {
 
     @objc public func makeActionButtonFont() -> UIFont {
 
-        if let buttonFontDescriptor = self.buttonFontDescriptor {
-            return UIFont(descriptor: buttonFontDescriptor, size: actionButtonFontSize)
+        if let buttonFont = self.buttonFont {
+            return buttonFont
         } else {
             return UIFont.systemFont(ofSize: actionButtonFontSize, weight: .semibold)
         }
@@ -177,8 +177,8 @@ extension BLTNItemAppearance {
 
     @objc public func makeAlternativeButtonFont() -> UIFont {
 
-        if let buttonFontDescriptor = self.buttonFontDescriptor {
-            return UIFont(descriptor: buttonFontDescriptor, size: alternativeButtonFontSize)
+        if let buttonFont = self.buttonFont {
+            return buttonFont
         } else {
             return UIFont.systemFont(ofSize: alternativeButtonFontSize, weight: .semibold)
         }
